@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<!------------------------------------------ head  -------------------------------------------------------->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <title>Discussion App</title>
+</head>
+<!------------------------------------------ body  -------------------------------------------------------->
+
+<body>
+
+    <!-------------------------------------- header  ------------------------------------------------------>
+    <header class="container-fluid" id="DiscussionHeader">
+        <div class="container">
+            <div class="row">
+                <h2 class="m-2" id="DiscussionHeader">
+                    Discussion Portal
+                </h2>
+            </div>
+        </div>
+    </header>
+
+    <!----------------------------------- main section  ---------------------------------------------------->
+    <section class="container-fluid">
+        <div class="row" style="display: block;">
+           
+            <!------------------------------ new question || responses section ------------------------->
+            <!---------------- new question window ------------------>
+            <div class="col-md-7 p-4" id="mainSection2NewQuestionSection">
+                <h1>
+                    Welcome to Discussion Portal!
+                </h1>
+                <p>
+                    Enter a subject and question to get started.
+                </p>
+                <form class="d-flex flex-column">
+                    <input type="text" name="questionSubject" id="questionSubject" placeholder="Subject"
+                    class="mb-2 w-50" value="" required>
+                    <textarea name="question" id="question" cols="30" rows="6" placeholder="Question"
+                    required></textarea>
+                    <button type="button" id="submit" class="btn btn-primary mt-2 submitButtonStyle">Submit</button>
+                </form>
+            </div>
+            
+            
+            <!---------------- response window ------------------>
+            <div class="col-md-7 p-4" id="mainSection2ResponseSection">
+                <div>
+                    <h3>Question</h3>
+                    <div class="p-3" style="background-color:whitesmoke" value="">
+                        <h4 id="responseSubject">JSON and Web Storage</h4>
+                        <p id="responseQuestion">How to use Web Storage</p>
+                        <i class="fa fa-thumbs-up text-success mr-3" style="font-size: 20px;" id="thumbsUp">40</i>
+                        <i class="fa fa-thumbs-down text-danger mr-3" style="font-size: 20px;" id="thumbsDown">40</i>
+                    </div>
+                    <button type="button" id="resolve" value="" class="btn btn-primary mt-2 submitButtonStyle">Resolve</button>
+                </div>
+                <h5 class="mt-2">Response</h5>
+                <div id="responseShowingDiv">
+                    No response
+                    <!-- <div class="p-3" style="background-color:whitesmoke">
+                        <h4 id="responseSubject">JSON and Web Storage</h4>
+                        <p id="responseQuestion">How to use Web Storage</p>
+                    </div> -->
+                </div>
+                <div class="mt-2">
+                    <h3>Add Response</h3>
+                    <form class="d-flex flex-column">
+                        <input type="hidden" id="idChecker" value="">
+                        <input type="text" name="responserName" id="responserName" placeholder="Enter Name"
+                            class="mb-2 w-50" value="" required>
+                        <textarea name="response" id="responsePara" cols="30" rows="6" placeholder="Question" required></textarea>
+                        <button type="button" id="responseSubmit"
+                            class="btn btn-primary mt-2 submitButtonStyle">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+             <!------ static section || add question || search question || questions list section ------->
+             <div class="col-md-5" id="mainSection1">
+                <!------------------ add question || search seaction  -------------------------->
+                <div class="row p-3" id="mainSection1Row1">
+                    <buttton class="btn btn-primary col-md-4 m-md-0 mr-md-1 m-1" id="newQuesBtn">Add New Question</buttton>
+                    <input type="text" name="searchQuestion" id="searchQuestion" placeholder="Search here!"
+                        class="form-control col-md-5 m-md-0 m-1">
+                </div>
+               
+                <div id="questionDiv">
+
+                </div>
+                <!----------------- list of question  ----------------->
+                <!-- <div class="m-2 border-bottom border-dark">
+                    <h3>JSON and Web Storage</h3>
+                    <p>How to use Web Storage</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+</body>
+<!-------------------------------------------------- script ------------------------------------------>
+<script src="index.js"></script>
+
+
+
+</html>
+
+
